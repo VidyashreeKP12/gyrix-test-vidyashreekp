@@ -1,17 +1,118 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
+  <ion-toolbar color="primary">
     <ion-title>
-      Tab 2
+      Home
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
-    </ion-toolbar>
-  </ion-header>
 
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+<ion-content>
+  <ion-card *ngFor="let item of results">
+    <ion-card-content (click)="viewDetails(id)">
+      <form [formGroup]="homeForm" novalidate>
+      <ion-item lines="none" detail>
+ 
+        <ion-label>
+         <h4>{{item.name}}</h4>
+       </ion-label> 
+
+      </ion-item>
+      </form>
+    </ion-card-content>
+  </ion-card>
+
+
+
+  <ion-card *ngIf="view" style="text-align: center;">
+
+     
+
+    <h4 style="color:#860d0d"> Profile Information</h4>
+ 
+    <ion-row><ion-col class="headlabel1" formControlName="username" >User Name</ion-col><span class="labelspanh">:</span><ion-col class="headlabel"> <i>{{username}}</i>  </ion-col></ion-row> 
+      <ion-row><ion-col class="childlabel1" formControlName="email" >Email </ion-col><span class="labelspan">:</span><ion-col class="childlabel"> <i></i>{{email}}  </ion-col></ion-row>
+      <ion-row><ion-col class="headlabel1"  formControlName="phone" >Phone </ion-col><span class="labelspanh">:</span><ion-col class="headlabel"> <i></i> {{phone}} </ion-col></ion-row>
+      <ion-row><ion-col class="childlabel1" formControlName="address">Address </ion-col><span class="labelspan">:</span><ion-col class="childlabel"> <i></i> {{address}} </ion-col></ion-row>
+    </ion-card>          
 </ion-content>
+
+<!--<ion-content padding>
+  <ion-list>
+    <ion-item>
+      <ion-label> ID</ion-label>
+      <ion-label> Name</ion-label>
+      <ion-label>Email</ion-label>
+      <ion-label> Address</ion-label>
+      <ion-label>Contact</ion-label>
+    </ion-item>
+
+    <ion-item *ngFor ="let item of results">
+      <ion-label>{{item.id}}</ion-label>
+      <ion-label> {{item.name}}</ion-label>
+      <ion-label>{{item.email}}</ion-label>
+      <ion-label> {{item.address}}</ion-label>
+      <ion-label>{{item.contact}}</ion-label>
+    </ion-item>
+  </ion-list>-->
+
+  <!-- <ion-card >
+    <ion-card *ngFor="let item of row_data">
+       <ion-card-content >
+         <ion-item lines="none" detail>
+ 
+           <ion-label>
+            <h4>{{item.user_name}}</h4>
+          </ion-label> 
+ 
+         </ion-item>
+           </ion-card-content>
+          
+         </ion-card>
+      </ion-card> -->
+
+
+   <!-- <ion-card *ngIf="view" style="text-align: center;">
+
+     
+
+    <h4 style="color:#860d0d">Activity Information</h4>
+ 
+      <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)" *ngIf="view">
+        <ion-refresher-content
+       pullingIcon="chevron-down-circle-outline"
+       pullingText="Pull to refresh"
+       refreshingSpinner="circles"
+       refreshningText="Refreshing..."  >
+        </ion-refresher-content>
+      </ion-refresher>
+ 
+      <ion-row><ion-col class="headlabel1">Activity Name</ion-col><span class="labelspanh">:</span><ion-col class="headlabel"> <i>{{event_name}}</i>  </ion-col></ion-row>
+      <ion-row><ion-col class="childlabel1">Description </ion-col><span class="labelspan">:</span><ion-col class="childlabel"> <i>{{event_description}}</i>  </ion-col></ion-row>
+      <ion-row><ion-col class="headlabel1">Activity Status </ion-col><span class="labelspanh">:</span><ion-col class="headlabel"> <i>{{eventStatus}}</i>  </ion-col></ion-row>
+               
+   <div style="text-align: center;font-size: large;margin: 8px;">  
+   
+      <ion-button (click)="delete_Event(event_id)"  style="background: #860d0d;" >
+      <ion-icon name="trash" style="color: white;"></ion-icon>
+      </ion-button>
+    
+      <ion-button (click)="update_Event(event_id)" style="background: #860d0d;" >
+        <ion-icon name="create" style="color: white;"></ion-icon>
+      </ion-button>
+     
+    </div>
+   
+  
+   
+  </ion-card>
+
+    
+    <ion-fab vertical="bottom" horizontal="end" slot="fixed" edge="false" *ngIf="!view&&online">
+      <ion-fab-button color="primary" routerDirection="root" [routerLink]="'../add-event/:id'" detail="false">
+        <ion-icon name="add" class="fabListIcon"></ion-icon>
+      </ion-fab-button>
+    </ion-fab> -->
+
+
+ 

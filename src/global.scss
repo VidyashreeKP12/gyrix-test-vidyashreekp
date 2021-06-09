@@ -24,3 +24,54 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+
+
+.inputbox{
+
+    margin-bottom: 12px;
+    border: 0.8px solid #a08c8c6e;
+    border-radius: 8px;
+    border-bottom: none;
+    font-size: 14px;
+}
+
+
+.headlabel{
+    background: #eff9ef;
+    padding: 7px;
+    color: #9c7575;
+    text-align: left;
+    
+}
+.headlabel1{
+  background: #eff9ef;
+  padding: 7px;
+  color: #9c7575;
+  text-align: right;
+}
+.labelspan{    padding: 7px;
+}
+.labelspanh{ padding: 7px;
+  background: #eff9ef;
+}
+.childlabel{
+    padding: 7px;
+    
+    text-align: left;
+
+}
+.childlabel1{
+    
+  padding: 7px;
+  
+  text-align: right;
+
+}
+.childlabel2{
+    
+  
+  
+  text-align: right;
+
+}
